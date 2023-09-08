@@ -1,5 +1,12 @@
-import Feedback from './Feedback/Feedback';
+import { Component } from 'react';
+import css from './index.css';
 
-export const App = () => {
-  return <Feedback />;
-};
+// import komponentów
+
+export default class App extends Component {
+  state = {
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  };
+}
