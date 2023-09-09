@@ -8,6 +8,11 @@ export default class App extends Component {
     neutral: 0,
     bad: 0,
   };
+
+  countTotalFeedback = (good, neutral, bad) => good + neutral + bad;
+  countPositiveFeedbackPercentage = (good, neutral, bad) =>
+    Math.ceil((good / (good + neutral + bad)) * 100);
+
   render() {
     return (
       <Container>
