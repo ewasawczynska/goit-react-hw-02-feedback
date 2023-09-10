@@ -2,7 +2,7 @@ import { StyledList, StyledItem } from './Statistics.styled';
 import PropTypes from 'prop-types';
 
 export default function Statistics(props) {
-  const { good, neutral, bad, total, positiveFeedback } = props;
+  const { good, neutral, bad, total, positivePercentage } = props;
   return (
     <StyledList>
       <li>
@@ -18,8 +18,16 @@ export default function Statistics(props) {
         Total: <StyledItem>{total}</StyledItem>
       </li>
       <li>
-        Positive feedback: <StyledItem>{good}</StyledItem>
+        Positive feedback: <StyledItem>{positivePercentage || '0'}%</StyledItem>
       </li>
     </StyledList>
   );
 }
+
+Statistics.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
+};

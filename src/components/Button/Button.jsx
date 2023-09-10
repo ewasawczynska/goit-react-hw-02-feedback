@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default function Button({ handler, children }) {
   return (
-    <StyledButton type="button" onClick="handler">
+    <StyledButton type="button" onClick={handler}>
       {children}
     </StyledButton>
   );

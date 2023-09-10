@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import { OptionsBox } from './Feedback.styled';
 import { Button } from 'components/Button';
 
-export default function Feedback({ options }) {
+export default function Feedback({ options, updateFeedback }) {
   return (
     <OptionsBox>
       {options.map(option => (
-        <Button key={option}>{option}</Button>
+        <Button key={option} handler={updateFeedback}>
+          {option}
+        </Button>
       ))}
     </OptionsBox>
   );
@@ -15,4 +17,5 @@ export default function Feedback({ options }) {
 
 Feedback.propTypes = {
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  updateFeedback: PropTypes.func.isRequired,
 };
