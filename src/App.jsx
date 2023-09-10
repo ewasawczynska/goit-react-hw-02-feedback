@@ -2,7 +2,6 @@ import { Component } from 'react';
 
 import {
   Section,
-  Button,
   Feedback,
   Container,
   Statistics,
